@@ -8,9 +8,11 @@ window.onload = function(){
 
     loadJsonData("assets/data/locations.json").then((locations) => {
         locationsArray = locations;
+
+        // immediate data here. outside waits for events
     })
 
-    loadJsonData("assets/data/nationalparks.json").then((nationalParks) => {
+    loadJsonData("assets\data\nationalparks.json").then((nationalParks) => {
         nationalParksArray = nationalParks.parks;
     })
 
