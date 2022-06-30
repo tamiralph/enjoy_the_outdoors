@@ -94,9 +94,12 @@ function generateTableRows(someArrayOfData) {
         row += `<tr>`
         row += `    <td>${park.LocationID}</td>`
         row += `    <td>${park.LocationName}</td>`
-        row += `    <td>${park.State}</td>`
         row += `    <td>${park.Address}</td>`
+        row += `    <td>${park.City}</td>`
+        row += `    <td>${park.State}</td>`
+        row += `    <td>${park.ZipCode}</td>`
         row += `    <td>${park.Phone}</td>`
+        row += `    <td>${park.Fax}</td>`
         row += `</tr>`
 
         searchResultsBody.innerHTML += row
