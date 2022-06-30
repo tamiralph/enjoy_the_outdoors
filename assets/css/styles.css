@@ -43,5 +43,10 @@ p {
     background-position: center center;
   }
 
+/* cards*/
+.card {
 
+    text-align: center;
+    font-size: 20px;
+}  
 

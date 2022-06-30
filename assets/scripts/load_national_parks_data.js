@@ -4,7 +4,7 @@ let locationsArray = []
 let nationalParksArray = []
 let parkTypesArray = []
 
-window.onload = function(){
+window.onload = function () {
 
     loadJsonData("assets/data/locations.json").then((locations) => {
         locationsArray = locations;
@@ -12,11 +12,11 @@ window.onload = function(){
         // immediate data here. outside waits for events
     })
 
-    loadJsonData("assets\data\nationalparks.json").then((nationalParks) => {
+    loadJsonData("assets/data/nationalParks.json").then((nationalParks) => {
         nationalParksArray = nationalParks.parks;
     })
 
-    loadJsonData("assets/data/parktypes.json").then((parkTypes) => {
+    loadJsonData("assets/data/parkTypes.json").then((parkTypes) => {
         parkTypesArray = parkTypes;
     })
 
