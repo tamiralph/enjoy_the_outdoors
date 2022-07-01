@@ -1,62 +1,34 @@
 // getting the dropdown list into the JS file for us to work with
-let searchMtnDDL = document.querySelector("#searchMtnDDL");
-
-// Filter array for mountains
-let mountains = document.querySelector("#mountains");
-
-// pull in the search results table
-let searchResults = document.querySelector("#searchResults");
-let searchResultsBody = document.querySelector("#searchResults tbody");
+let resultCards = document.querySelector("#resultCards");
 
 
-searchMtnDDL.addEventListener("change", function (event) {
-
-    searchResults.classList.add 
-
-    let elev = event.target.value;
-
-    let filteredElev = mountainsArray.filter((mountains) => {
-        return mountains.name.indexOf(type) >= 0
-
-    })
-
-    console.log(filteredElev)
-
-    generateTableRows(filteredElev)
 
 
-    searchResults.classList.remove("d-none")
+resultCards.addEventListener("change", function (event) {
 
-})
+       let selectMountain = mountainsArray.filter(mountain) => {
+        return mountain.name === event.target.value
 
-function generateTableRows(someArrayOfData) {
+       }     
+    
+       generateMountainInCard(selectMountain[0])
+       resultCards.classList.remove("d-none")
+    
+       console.log(resultCards)
+} )
+    
 
-    //clear out the tables previous results
-    searchResultsBody.innerHTML = ""
+function generateSearchMtnCard(mountain) {
+    searchMtnCard.innerHTML = ""
+    let card = ""
+    card += `<div class="card" style="width: 20rem;>`   
+    card += `<img src="assets/images/mountains/$(mountain.img)"class=card-img-top" alt="..."`
+    card += `<div class="card body">`
+    card += `<h5 class="card-title">${mountain.name}</h5>`
+    card += `<p class="card-text">${mountain.desc}</p>`
 
+    searchMtnCard.innerHTML += card
 
-    //generate new table rows and append to the the tbody innerHTML
-    someArrayOfData.forEach((mountains) => {
-        let row = ""
-        row += `<tr>`
-        row += `    <td>${mountains.name}</td>`
-        row += `    <td>${mountains.elevation}</td>`
-        row += `    <td>${mountains.effort}</td>`
-        row += `    <td>${mountains.desc}</td>`
-        row += `</tr>`
-
-        searchResultsBody.innerHTML += row
-    })
-
-}
-
-function generateSearchMtnOptions() {
-
-    mountains.innerHTML = `<option value="">Choose A Mountain</option>`
-
-    mountainsArray.forEach((mountains) => {
-        elevationsDDL.innerHTML += `<option value="${mountains}">${mountains}</option>`
-    })
 
 }
 
