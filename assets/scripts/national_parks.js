@@ -73,14 +73,11 @@ typesDDL.addEventListener("change", function (event) {
 
     })
 
-    // console.log(filteredTypes)
-
     generateTableRows(filteredTypes)
 
     searchResults.classList.remove("d-none")
 
 })
-
 
 function generateTableRows(someArrayOfData) {
     console.log(someArrayOfData)
@@ -126,3 +123,4 @@ function generateTypesDDLOptions() {
     })
 
 }
+
